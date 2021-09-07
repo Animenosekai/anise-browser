@@ -20,3 +20,8 @@ def makeResponse(data=None, error=None, code=200, cache_hit=False):
         response.headers["X-ANISE-CACHE"] = "MISS"
     response.status_code = int(code)
     return response
+
+def to_bool(val):
+    if str(val).lower() in {"false", "0", "no"}:
+        return False
+    return True
