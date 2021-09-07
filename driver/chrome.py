@@ -27,7 +27,7 @@ class Chrome():
 
         for folder in ["", "/user-data", "/data-path", "/cache-dir"]:
             if not exists(self._tmp_folder + str(folder)):
-                makedirs(self._tmp_folder)
+                makedirs(self._tmp_folder + str(folder))
 
         print("Defining the options")
         self.options = webdriver.ChromeOptions()
