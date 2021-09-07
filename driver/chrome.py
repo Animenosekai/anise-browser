@@ -1,11 +1,12 @@
-from os import makedirs
+from os import makedirs, system
 from os.path import abspath, dirname, exists
 from uuid import uuid4
 
 import pyuseragents
 from selenium import webdriver
 
-CHROMIUM_PATH = abspath(dirname(dirname(__file__))) + "/bin/chromium"
+#CHROMIUM_PATH = abspath(dirname(dirname(__file__))) + "/bin/chromium"
+CHROMIUM_PATH = system("node driver/path.js")
 CHROMEDRIVER_PATH = abspath(dirname(dirname(__file__))) + "/bin/chromedriver"
 
 
