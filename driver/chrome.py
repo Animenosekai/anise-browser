@@ -7,7 +7,9 @@ import pyuseragents
 from selenium import webdriver
 
 #CHROMIUM_PATH = abspath(dirname(dirname(__file__))) + "/bin/chromium"
-CHROMIUM_PATH = check_output(["node", "driver/path.js"]).decode("utf-8").replace("\n", "")
+#CHROMIUM_PATH = check_output(["node", "driver/path.js"]).decode("utf-8").replace("\n", "")
+with open("./bin/path") as path_file:
+    CHROMIUM_PATH = path_file.read()
 CHROMEDRIVER_PATH = abspath(dirname(dirname(__file__))) + "/bin/chromedriver"
 
 
