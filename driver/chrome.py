@@ -1,16 +1,23 @@
 from os import makedirs
 from subprocess import check_output
+from brotli import decompress
 from os.path import abspath, dirname, exists
 from uuid import uuid4
 
 import pyuseragents
 from selenium import webdriver
 
-#CHROMIUM_PATH = abspath(dirname(dirname(__file__))) + "/bin/chromium"
+_CHROMIUM_PATH = abspath(dirname(dirname(__file__))) + "/bin/chromium.br"
+CHROMIUM_PATH = abspath(dirname(dirname(__file__))) + "/bin/chromium"
+print("Chromium path:", CHROMIUM_PATH)
+if not exists(CHROMIUM_PATH):
+    with open(_CHROMIUM_PATH, "rb") as comp_chrome_file:
+        with open(CHROMIUM_PATH, "wb") as chrome_file:
+            chrome_file.write(decompress(comp_chrome_file.read()))
 #CHROMIUM_PATH = check_output(["node", "driver/path.js"]).decode("utf-8").replace("\n", "")
 #with open("./bin/path") as path_file:
 #    CHROMIUM_PATH = path_file.read()
-CHROMIUM_PATH = "/tmp/chromium"
+#CHROMIUM_PATH = "/tmp/chromium"
 CHROMEDRIVER_PATH = abspath(dirname(dirname(__file__))) + "/bin/chromedriver"
 
 
