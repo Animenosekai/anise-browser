@@ -55,8 +55,8 @@ export class Chrome {
         this.driver = await chromium.puppeteer.launch({
             args: this.options,
             defaultViewport: chromium.defaultViewport,
-            //executablePath: await chromium.executablePath,
-            executablePath: "/Applications/Google Chrome Dev.app/Contents/MacOS/Google Chrome Dev",
+            executablePath: await chromium.executablePath,
+            //executablePath: "/Applications/Google Chrome Dev.app/Contents/MacOS/Google Chrome Dev",
             headless: chromium.headless,
             ignoreHTTPSErrors: true,
         });
