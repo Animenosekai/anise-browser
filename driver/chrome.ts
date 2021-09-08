@@ -63,6 +63,7 @@ export class Chrome {
         this.page = await this.driver.newPage()
         await this.setSize(this._size)
         this.page.setCookie({name: "CONSENT", value: "YES+cb", url: "https://google.com"})
+        this.page.setDefaultNavigationTimeout(8000);
         this._init = true
     }
 
@@ -93,7 +94,7 @@ export class Chrome {
         if (url) {
             log("Opening a new URL", "Driver")
             await this.page.goto(url, {
-                waitUntil: "networkidle0",
+                waitUntil: "networkidle0"
             });
         }
     }
