@@ -1,0 +1,33 @@
+{
+  "name": "anise-browser",
+  "version": "1.0.0",
+  "description": "A browser controlled by a RESTful API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Animenosekai/anise-browser.git"
+  },
+  "keywords": [
+    "browser",
+    "chrome",
+    "puppeteer"
+  ],
+  "author": "Anime no Sekai",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Animenosekai/anise-browser/issues"
+  },
+  "homepage": "https://github.com/Animenosekai/anise-browser#readme",
+  "dependencies": {
+    "chrome-aws-lambda": "^10.1.0",
+    "puppeteer-core": "^10.2.0",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "@types/uuid": "^8.3.1",
+    "@vercel/node": "^1.12.1"
+  }
+}
